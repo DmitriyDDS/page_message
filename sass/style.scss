@@ -345,8 +345,9 @@ body{
 
     .dialog-wrap{
         flex: 1;
-        overflow-y: scroll;
+        overflow-y: auto;
         margin-right: 6px;
+        margin-left: 6px;
 
         .dialog-inner{
             display: flex;
@@ -477,6 +478,71 @@ body{
                     left: 50%;
                     transform: translate(-50%, -50%);
                     background: url('../images/send-message-button.png') no-repeat 50%/contain;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 900px){
+
+    .sidebar{ 
+        min-width: 60px;
+
+        li{
+
+            div.notification{
+                right: 10px;
+            }
+        }
+    }
+
+    .header {
+
+        .breadcrumbs{
+            display: none;
+        }
+    }
+
+    .message-members{
+        display: none;
+    }
+    
+    .message-friend{
+
+        a{
+            display: none;
+        }
+    }
+    
+    .main-message{
+        padding: 20px;
+        
+        .message-container{            
+            min-height: calc( 100vh - 100px);
+            max-height: calc( 100vh - 100px);
+        }
+    }
+
+    .message-dialog{
+
+        .dialog-wrap{
+
+            .dialog-inner{
+
+                .message-friend, .message-own{
+                    margin: 10px;
+                    padding: 13px;
+                    &::after{
+                        display: none;
+                    }
+                }
+
+                time{
+                    position: static;
+                    display: block;
+                    width: 100%;
+                    text-align: right;
                 }
             }
         }
